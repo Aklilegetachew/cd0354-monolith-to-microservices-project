@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: docker-compose -f docker-compose-build.yaml build --parallel
-    - run: docker tag udagram-api-feed:v12 aklile/udagram-api-feed:v12a
-    - run: docker tag reverseproxy:v12 aklile/reverseproxy:v12a
+    - run: docker tag udagram-api-feed:v12 aklile/udagram-api-feed:v4a
+    - run: docker tag reverseproxy:v12 aklile/reverseproxy:v4a
     - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u "${{secrets.DOCKER_USERNAME}}" --password-stdin
-    - run: docker push aklile/udagram-api-feed:v12a
-    - run: docker push aklile/reverseproxy:v12a
+    - run: docker push aklile/udagram-api-feed:v4a
+    - run: docker push aklile/reverseproxy:v4a
