@@ -15,11 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - run: docker-compose -f docker-compose-build.yaml build --parallel
     - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{secrets.DOCKER_USERNAME}}" --password-stdin
-    - run: docker tag udagram-reverseproxy aklile/udagram-reverseproxy:v4a
-    - run: docker tag udagram-api-feed aklile/udagram-api-feed:v4a
-    - run: docker tag udagram-api-user aklile/udagram-api-user:v4a
-    - run: docker tag udagram-frontend aklile/udagram-frontend:local 
-    - run: docker push aklile/udagram-reverseproxy:v3a
-    - run: docker push aklile/udagram-api-feed:v4a
-    - run: docker push aklile/udagram-api-user:v4a
-    - run: docker push aklile/udagram-frontend:local
+    - run: docker push udagram-reverseproxy aklile/udagram-reverseproxy:v3a
+    - run: docker push udagram-api-feed aklile/udagram-api-feed:v4a
+    - run: docker push udagram-api-user aklile/udagram-api-user:v4a
+    - run: docker push udagram-frontend aklile/udagram-frontend:local
