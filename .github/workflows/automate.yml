@@ -23,7 +23,7 @@ jobs:
       - run: docker tag udagram-api-feed aklile/udagram-api-feed:v4a
       - run: docker tag udagram-api-user aklile/udagram-api-user:v4a
       - run: docker tag udagram-frontend aklile/udagram-frontend:local
-      - run: docker push aklile/udagram-reverseproxy:v3a
-      - run: docker push aklile/udagram-api-feed:v4a
-      - run: docker push aklile/udagram-api-user:v4a
-      - run: docker push aklile/udagram-frontend:local
+      - run: docker push aklile/udagram-reverseproxy
+      - run: docker push aklile/udagram-api-feed
+      - run: docker push aklile/udagram-api-user
+      - run: docker push aklile/udagram-frontend
